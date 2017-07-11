@@ -11,8 +11,9 @@ const beAGreatTeacherFOTD = () => {
       var factOfTheDay = todaysFact.parent().next().text();
       var factOfTheDayBackup = todaysFact.next().text();
 
-      // console.log("`````````````````````````````````")
-      // console.log("Random fact:", factOfTheDay, factOfTheDayBackup); //One of these will work, the other won't (which is perfect, since it seems to randomly alternate)
+      console.log("`````````````````````````````````")
+      console.log("Random fact:", factOfTheDay, factOfTheDayBackup); //One of these will work, the other won't (which is perfect, since it seems to randomly alternate)
+      console.log("`````````````````````````````````")
 
       FACTobj.factoid = factOfTheDay + factOfTheDayBackup; //八月で正しく出来たかどうか確認しないといけないじゃん
       console.log("Full FACTobj object...", FACTobj)

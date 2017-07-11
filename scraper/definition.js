@@ -18,15 +18,16 @@ const merriamWebsterWOTD = () => {
       var definitionsOnly = entireDefinitionsBox.slice(35, -exampleChars -50).trim();
       var didYouKnow = $('.wod-did-you-know-container').children().next().html();
 
-      // console.log(" ---===< Word of the day:", todaysWord, "(" + wordType + ")" ,"[" + pronunciation + "] >===---");
-      // console.log("~ ~ ~ ~ ~ ~ ~ ~ ~")
-      // console.log("Definitions ====>", definitionsOnly) //You have to experiment with .slice() on different days (you could do -40, -50, etc.)
-      // console.log("~ ~ ~ ~ ~ ~ ~ ~ ~")
-      // console.log("Example 1 -->", exampleOne);
-      // console.log("")
-      // console.log("Example 2 -->", exampleTwo);
-      // console.log("- - - - - - - - - - - - - - - - - - - - ")
+      console.log("#####################wotd#####################")
+      console.log(" ---===< Word of the day:", todaysWord, "(" + wordType + ")" ,"[" + pronunciation + "] >===---");
+      console.log("Definitions ====>", definitionsOnly) //You have to experiment with .slice() on different days (you could do -40, -50, etc.)
+      console.log("~ ~ ~ ~ ~ ~ ~ ~ ~")
+      console.log("Example 1 -->", exampleOne);
+      console.log("")
+      console.log("Example 2 -->", exampleTwo);
+      console.log("~ ~ ~ ~ ~ ~ ~ ~ ~")
       console.log("Food for thought:", didYouKnow);
+      console.log("#####################wotd#####################")
 
       WOTDobj.wotd = todaysWord;
       WOTDobj.wordType = wordType;

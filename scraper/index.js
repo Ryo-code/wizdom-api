@@ -11,10 +11,9 @@ const news      = require("./news");
 const quotation = require("./quotation");
 
 
-
-// definition();
+definition();
 // fact();
-// news();
+news();
 quotation();
 
 const everyMorning = new CronJob('00 15 7 * * 0-6', () => { // This cronjob will run at 7:15:00(AM) everyday

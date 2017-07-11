@@ -15,13 +15,13 @@ const redditTopNews = () => {
       var commentsNumbers = todaysTopStory.next().next().text().trim().slice(0, -14).trim();
       var commentsLink = todaysTopStory.next().next().children().children().attr('href');
 
-      // console.log("- - - - - - - - - - - - - - - - - -");
-      // console.log("News Title  -->", newsTitle);
-      // console.log("News source -->", abbrevLink);
-      // console.log("Article link ->", fullLink);
-      // console.log("`````````````````````````````````");
-      // console.log("#of comments ->", commentsNumbers, "...which is a", typeof(commentsNumbers));
-      // console.log("Comments link->", commentsLink);
+      console.log("- - - - - - - - - - - - - - - - - -");
+      console.log("News Title  -->", newsTitle);
+      console.log("News source -->", abbrevLink);
+      console.log("Article link ->", fullLink);
+      console.log("#of comments ->", commentsNumbers, "...which is a", typeof(commentsNumbers));
+      console.log("Comments link->", commentsLink);
+      console.log("- - - - - - - - - - - - - - - - - -");
 
       NEWSobj.title = newsTitle;
       NEWSobj.source = abbrevLink;
@@ -29,7 +29,7 @@ const redditTopNews = () => {
       NEWSobj.numOfRedditComments = parseInt(commentsNumbers);
       NEWSobj.redditLink = commentsLink;
 
-      console.log("Full NEWSobj object...", NEWSobj);
+      // console.log("Full NEWSobj object...", NEWSobj);
       return NEWSobj;
     }
   });
