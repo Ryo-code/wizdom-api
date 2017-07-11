@@ -11,12 +11,13 @@ const news      = require("./news");
 const quotation = require("./quotation");
 
 
+
 // definition();
 // fact();
 // news();
 quotation();
 
-const everyMorning = new CronJob('00 15 7 * * 0-6', () =>  // Run at 7:15:00(AM) everyday
+const everyMorning = new CronJob('00 15 7 * * 0-6', () => { // This cronjob will run at 7:15:00(AM) everyday
   const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
   console.log("I'm pretty sure it's 7:15 AM... but the precise moment is", rightNow);
 
