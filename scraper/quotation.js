@@ -6,24 +6,25 @@ const quoteOfTheDay = () => {
     if(!err) {
       var $ = cheerio.load(html);
       var QOTDobj = {};
+      var todaysQuote = $('small').parent().parent().parent().children().children().children().children().children().children().children();
 
-      var quoterElement = $('small').parent().parent().parent().children().children().children().children().children().children().children().has('td:contains("~")');
+      var quoterElement = todaysQuote.has('td:contains("~")');
       var quotedBy = quoterElement.text().trim().slice(0, -1);
-      var quoteElement = $('small').parent().parent().parent().children().children().children().children().children().children().children().children();
+      var quoteElement = todaysQuote.children();
       var actualQuote = quoteElement.text().trim().slice(0, -quotedBy.length -1);
 
-      // console.log("==================================================")
-      // console.log("Quote of the Day...");
+      console.log("==================================================")
+      console.log("Quote of the Day...");
       // console.log("");
-      // console.log(actualQuote);
+      console.log(actualQuote);
       // console.log("");
-      // console.log("Quoted by:", quotedBy);
-      // console.log("==================================================")
+      console.log("Quoted by:", quotedBy);
+      console.log("==================================================")
 
       QOTDobj.quote = actualQuote;
       QOTDobj.quoter = quotedBy;
 
-      console.log("Full QOTDobj object...", QOTDobj)
+      // console.log("Full QOTDobj object...", QOTDobj)
       return QOTDobj;
     }
   })
