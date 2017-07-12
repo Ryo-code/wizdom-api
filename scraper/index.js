@@ -6,10 +6,10 @@ const quotationOTD  = require("./quotation");
 const CronJob       = require('cron').CronJob;
 const moment        = require("moment");
 
-// definitionOTD();
+definitionOTD();
 // factOTD();
 // newsOTD();
-quotationOTD();
+// quotationOTD();
 
 const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
 console.log("Date & time", rightNow);

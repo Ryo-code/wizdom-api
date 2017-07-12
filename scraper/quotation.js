@@ -19,18 +19,18 @@ const quoteOfTheDay = () => {
       const quoterLink = "https://en.wikiquote.org" + todaysQuote.children().children().first('td').next().children().children('a').attr('href');
       const imageSrc = "https:" + todaysQuote.parent().parent().children().children('a').children('img').attr('src');
 
-      // Quotation.create({
-      //   quote: quote,
-      //   quoter: quoter,
-      //   quoterLink: quoterLink,
-      //   imageSrc: imageSrc,
-      // }, (err, quote) => {
-      //   if(err){
-      //     console.log("Error:", err);
-      //   }else{
-      //     console.log("New quote:", quote);
-      //   }
-      // });
+      Quotation.create({
+        quote: quote,
+        quoter: quoter,
+        quoterLink: quoterLink,
+        imageSrc: imageSrc,
+      }, (err, quote) => {
+        if(err){
+          console.log("Error:", err);
+        }else{
+          console.log("New quote:", quote);
+        }
+      });
 
     }
   })

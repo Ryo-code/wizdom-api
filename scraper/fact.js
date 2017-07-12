@@ -9,11 +9,11 @@ const beAGreatTeacherFOTD = () => {
       const FACTobj = {};
       const todaysFact = $('span:contains("Random Fact of the Day:")').parent();
 
-      const factOfTheDay = todaysFact.parent().next().text();
-      const factOfTheDayBackup = todaysFact.next().text();
+      const FOTD = todaysFact.parent().next().text();
+      const FOTDBackup = todaysFact.next().text();
 
       console.log("`````````````````````````````````")
-      console.log("Random fact:", factOfTheDay + factOfTheDayBackup);
+      console.log("Random fact:", FOTD + FOTDBackup);
       console.log("`````````````````````````````````")
       //八月で正しく出来たかどうか確認しないといけないじゃん
 
