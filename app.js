@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const scraper = require("./scraper")
 
 app.use(express.static("public"));
 
