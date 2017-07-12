@@ -5,12 +5,13 @@ const Fact    = require("../models/fact");
 const beAGreatTeacherFOTD = () => {
   request('https://www.beagreatteacher.com/daily-fun-fact/', (err, resp, html) => {
     if (!err) {
-      var $ = cheerio.load(html);
-      var FACTobj = {};
-      var todaysFact = $('span:contains("Random Fact of the Day:")').parent();
+      const $ = cheerio.load(html);
+      const FACTobj = {};
+      const todaysFact = $('span:contains("Random Fact of the Day:")').parent();
 
-      var factOfTheDay = todaysFact.parent().next().text();
-      var factOfTheDayBackup = todaysFact.next().text();
+      const factOfTheDay = todaysFact.parent().next().text();
+      const factOfTheDayBackup = todaysFact.next().text();
+
       console.log("`````````````````````````````````")
       console.log("Random fact:", factOfTheDay + factOfTheDayBackup);
       console.log("`````````````````````````````````")

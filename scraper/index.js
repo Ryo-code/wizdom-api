@@ -7,12 +7,12 @@ const CronJob       = require('cron').CronJob;
 const moment        = require("moment");
 
 // definitionOTD();
-factOTD();
+// factOTD();
 // newsOTD();
-// quotationOTD();
+quotationOTD();
 
 const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
-console.log("The time is:", rightNow);
+console.log("Date & time", rightNow);
 
 const everyMorning = new CronJob('00 15 7 * * 0-6', () => { // This cronjob will run at 7:15:00(AM) everyday
   console.log("It's probably 7:15 AM... but the precise moment is", rightNow);

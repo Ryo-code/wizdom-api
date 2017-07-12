@@ -5,19 +5,19 @@ const Definition = require("../models/definition");
 const merriamWebsterWOTD = () => {
   request('https://www.merriam-webster.com/word-of-the-day', (err, resp, html) => {
     if (!err) {
-      var $ = cheerio.load(html);
-      var WOTDobj = {};
+      const $ = cheerio.load(html);
+      const WOTDobj = {};
 
-      var todaysWord = $('.word-and-pronunciation h1').text();
-      var wordType = $('.main-attr').text().trim();
-      var pronunciation = $('.word-syllables').text().trim();
+      const todaysWord = $('.word-and-pronunciation h1').text();
+      const wordType = $('.main-attr').text().trim();
+      const pronunciation = $('.word-syllables').text().trim();
 
-      var entireDefinitionsBox = $('.wod-definition-container').text();
-      var exampleOne = $('.wod-definition-container h2:contains("Examples")').next().text();
-      var exampleTwo = $('.wod-definition-container h2:contains("Examples")').next().next().text();
-      var exampleChars = exampleOne.length + exampleTwo.length
-      var definitionsOnly = entireDefinitionsBox.slice(35, -exampleChars -50).trim();
-      var didYouKnow = $('.wod-did-you-know-container').children().next().html();
+      const entireDefinitionsBox = $('.wod-definition-container').text();
+      const exampleOne = $('.wod-definition-container h2:contains("Examples")').next().text();
+      const exampleTwo = $('.wod-definition-container h2:contains("Examples")').next().next().text();
+      const exampleChars = exampleOne.length + exampleTwo.length
+      const definitionsOnly = entireDefinitionsBox.slice(35, -exampleChars -50).trim();
+      const didYouKnow = $('.wod-did-you-know-container').children().next().html();
 
       console.log("#####################wotd#####################")
       console.log(" ---===< Word of the day:", todaysWord, "(" + wordType + ")" ,"[" + pronunciation + "] >===---");
@@ -30,15 +30,6 @@ const merriamWebsterWOTD = () => {
       console.log("Food for thought:", didYouKnow);
       console.log("#####################wotd#####################")
 
-      // WOTDobj.wotd = todaysWord;
-      // WOTDobj.wordType = wordType;
-      // WOTDobj.pronunciation = pronunciation;
-      // WOTDobj.definition = definitionsOnly;
-      // WOTDobj.example1 = exampleOne;
-      // WOTDobj.example2 = exampleTwo;
-      // WOTDobj.didYouKnow = didYouKnow;
-      // console.log("Full WOTDobj object...", WOTDobj)
-      // return WOTDobj;
     }
   });
 }
