@@ -1,5 +1,6 @@
-const request = require('request');
-const cheerio = require('cheerio');
+const request   = require('request');
+const cheerio   = require('cheerio');
+const Quotation = require("../models/quotation");
 
 const quoteOfTheDay = () => {
   request('https://en.wikiquote.org/wiki/Main_Page', (err, resp, html) => {
@@ -8,24 +9,19 @@ const quoteOfTheDay = () => {
       var QOTDobj = {};
       var todaysQuote = $('small').parent().parent().parent().children().children().children().children().children().children().children();
 
-      var quoterElement = todaysQuote.has('td:contains("~")');
-      var quotedBy = quoterElement.text().trim().slice(0, -1);
-      var quoteElement = todaysQuote.children();
-      var actualQuote = quoteElement.text().trim().slice(0, -quotedBy.length -1);
+      var quoter = todaysQuote.has('td:contains("~")').text().trim().slice(0, -1);
+      var quote = todaysQuote.children().text().trim().slice(0, -quoter.length -1);
 
       console.log("==================================================")
       console.log("Quote of the Day...");
-      // console.log("");
-      console.log(actualQuote);
-      // console.log("");
-      console.log("Quoted by:", quotedBy);
+      console.log(quote);
+      console.log("Quoted by:", quoter);
       console.log("==================================================")
 
-      QOTDobj.quote = actualQuote;
-      QOTDobj.quoter = quotedBy;
-
+      // QOTDobj.quote = quote;
+      // QOTDobj.quoter = quoter;
       // console.log("Full QOTDobj object...", QOTDobj)
-      return QOTDobj;
+      // return QOTDobj;
     }
   })
 }

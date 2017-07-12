@@ -1,8 +1,9 @@
-const request = require('request');
-const cheerio = require('cheerio');
+const request    = require('request');
+const cheerio    = require('cheerio');
+const Definition = require("../models/definition");
 
 const merriamWebsterWOTD = () => {
-  request('https://www.merriam-webster.com/word-of-the-day', function (err, resp, html) {
+  request('https://www.merriam-webster.com/word-of-the-day', (err, resp, html) => {
     if (!err) {
       var $ = cheerio.load(html);
       var WOTDobj = {};
@@ -29,16 +30,15 @@ const merriamWebsterWOTD = () => {
       console.log("Food for thought:", didYouKnow);
       console.log("#####################wotd#####################")
 
-      WOTDobj.wotd = todaysWord;
-      WOTDobj.wordType = wordType;
-      WOTDobj.pronunciation = pronunciation;
-      WOTDobj.definition = definitionsOnly;
-      WOTDobj.example1 = exampleOne;
-      WOTDobj.example2 = exampleTwo;
-      WOTDobj.didYouKnow = didYouKnow;
-
+      // WOTDobj.wotd = todaysWord;
+      // WOTDobj.wordType = wordType;
+      // WOTDobj.pronunciation = pronunciation;
+      // WOTDobj.definition = definitionsOnly;
+      // WOTDobj.example1 = exampleOne;
+      // WOTDobj.example2 = exampleTwo;
+      // WOTDobj.didYouKnow = didYouKnow;
       // console.log("Full WOTDobj object...", WOTDobj)
-      return WOTDobj;
+      // return WOTDobj;
     }
   });
 }
