@@ -16,7 +16,7 @@ const beAGreatTeacherFOTD = () => {
       console.log("`````````````````````````````````")
 
       FACTobj.factoid = factOfTheDay + factOfTheDayBackup; //八月で正しく出来たかどうか確認しないといけないじゃん
-      console.log("Full FACTobj object...", FACTobj)
+      // console.log("Full FACTobj object...", FACTobj)
       return FACTobj;
     }
   });

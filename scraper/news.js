@@ -19,20 +19,24 @@ const redditTopNews = () => {
       console.log("News Title  -->", newsTitle);
       console.log("News source -->", abbrevLink);
       console.log("Article link ->", fullLink);
-      console.log("#of comments ->", commentsNumbers, "...which is a", typeof(commentsNumbers));
+      console.log("#of comments ->", commentsNumbers, "(a", typeof(commentsNumbers), "which is now being parsedinto an integer)");
       console.log("Comments link->", commentsLink);
       console.log("- - - - - - - - - - - - - - - - - -");
 
-      NEWSobj.title = newsTitle;
-      NEWSobj.source = abbrevLink;
-      NEWSobj.articleLink = fullLink;
-      NEWSobj.numOfRedditComments = parseInt(commentsNumbers);
-      NEWSobj.redditLink = commentsLink;
+      // NEWSobj.title = newsTitle;
+      // NEWSobj.source = abbrevLink;
+      // NEWSobj.articleLink = fullLink;
+      // NEWSobj.redditLink = commentsLink;
+      // NEWSobj.numOfRedditComments = parseInt(commentsNumbers);
+      // return NEWSobj;
 
-      // console.log("Full NEWSobj object...", NEWSobj);
-      return NEWSobj;
+      /* Rather than returning a news object, just stick the stuff into the DB right here */
+      
+
     }
   });
 }
+
+
 
 module.exports = redditTopNews;
