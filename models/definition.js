@@ -5,7 +5,7 @@ const definitionSchema = new mongoose.Schema({
   wotd: String,
   wordType: String,
   pronunciation: String,
-  definition: String,
+  definitions: [ String ], //or else it's [{ String }]
   example1: String,
   example2: String,
   didYouKnow: String,
