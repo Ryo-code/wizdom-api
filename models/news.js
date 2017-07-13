@@ -7,7 +7,7 @@ const newsSchema = new mongoose.Schema({
   articleLink: String,
   redditLink: String,
   numOfRedditComments: Number,
-  timestamp: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model("News", newsSchema);

@@ -9,7 +9,7 @@ const definitionSchema = new mongoose.Schema({
   example1: String,
   example2: String,
   didYouKnow: String,
-  timestamp: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model("Definition", definitionSchema);

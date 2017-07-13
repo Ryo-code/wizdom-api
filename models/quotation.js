@@ -6,7 +6,7 @@ const quotationSchema = new mongoose.Schema({
   quote: String,
   quoter: String,
   quoterLink: String,
-  timestamp: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model("Quotation", quotationSchema);

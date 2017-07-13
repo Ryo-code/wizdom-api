@@ -3,7 +3,7 @@ mongoose.connect("mongodb://localhost/wizdom");
 
 const factSchema = new mongoose.Schema({
   factoid: String,
-  timestamp: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model("Fact", factSchema);
