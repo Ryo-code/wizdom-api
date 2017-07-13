@@ -7,8 +7,6 @@ const redditTopNews = () => {
     if (!err) {
       const $ = cheerio.load(html);
       const todaysTopStory = $('span.rank:contains("1")').next().next().children().first('p.title').children().first();
-      const NEWSobj = {};
-
       const abbrevLink = todaysTopStory.children().first().next().text().trim().slice(1, -1);
       const newsTitle = todaysTopStory.children().first().text();
       const fullLink = todaysTopStory.children().attr('href');
@@ -20,14 +18,26 @@ const redditTopNews = () => {
       console.log("News Title  -->", newsTitle);
       console.log("News source -->", abbrevLink);
       console.log("Article link ->", fullLink);
-      console.log("#of comments ->", commentsNumbers, "(a", typeof(commentsNumbers), "which is now being parsedinto an integer)");
+      console.log("#of comments ->", commentsNumbers, "(a", typeof(commentsNumbers), "which is now being parsed into an integer)");
       console.log("Comments link->", commentsLink);
       console.log("- - - - - - - - - - - - - - - - - -");
+
+      News.create({
+        newsTitle: newsTitle,
+        source: abbrevLink,
+        articleLink: fullLink,
+        redditLink: commentsLink,
+        numOfRedditComments: commentsNumbers,
+      }, (err, news) => {
+        if(err){
+          console.log("Error:", err);
+        }else{
+          console.log("Top news of the day:", news);
+        }
+      });
 
     }
   });
 }
-
-
 
 module.exports = redditTopNews;

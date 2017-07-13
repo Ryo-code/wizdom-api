@@ -6,8 +6,6 @@ const merriamWebsterWOTD = () => {
   request('https://www.merriam-webster.com/word-of-the-day', (err, resp, html) => {
     if (!err) {
       const $ = cheerio.load(html);
-      const WOTDobj = {};
-
       const todaysWord = $('.word-and-pronunciation h1').text();
       const wordType = $('.main-attr').text().trim();
       const pronunciation = $('.word-syllables').text().trim();
@@ -16,7 +14,7 @@ const merriamWebsterWOTD = () => {
       const exampleTwo = $('.wod-definition-container h2:contains("Examples")').next().next().text();
       const didYouKnow = $('.wod-did-you-know-container').children().next().text();//.html() <-- to see italics and links
 
-      const definitionsBox = $('.wod-definition-container').children().next();//.html() //<--If you need to experiment
+      const definitionsBox = $('.wod-definition-container').children().next();//.html() //<--Experiment w\ stuff like ".siblings(<em>)" or ".content()"
       let current = definitionsBox.first('p');
       const defsArray = [];
 
@@ -30,22 +28,20 @@ const merriamWebsterWOTD = () => {
       }
       createDefinitionArray();
 
-      console.log("#####################wotd#####################");
+      console.log("###################WOTD###################");
       console.log("today's word is:", todaysWord);
       console.log(defsArray.length + " definitions:", defsArray);
-
       console.log("Example 1 -->", exampleOne);
       console.log("Example 2 -->", exampleTwo);
       console.log("Food for thought:", typeof (didYouKnow), didYouKnow);
-
-      // To manipulate content: before(), insertBefore(), replaceWith(), wrap(), prepend(), prependTo(), append()
+      // To manipulate content: before(), insertBefore(), replaceWith(), wrap(), prepend(), prependTo(), append(), etc.
       console.log("##########################################")
 
       Definition.create({
         word: todaysWord,
         wordType: wordType,
         pronunciation: pronunciation,
-        definitions: defsArray, //or else it's [{ String }]
+        definitions: defsArray,
         example1: exampleOne,
         example2: exampleTwo,
         didYouKnow: didYouKnow,

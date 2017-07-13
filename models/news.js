@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/wizdom");
 
 const newsSchema = new mongoose.Schema({
-  title: String,
+  newsTitle: String,
   source: String,
   articleLink: String,
   redditLink: String,

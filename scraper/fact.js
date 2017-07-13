@@ -6,24 +6,25 @@ const beAGreatTeacherFOTD = () => {
   request('https://www.beagreatteacher.com/daily-fun-fact/', (err, resp, html) => {
     if (!err) {
       const $ = cheerio.load(html);
-      const FACTobj = {};
       const todaysFact = $('span:contains("Random Fact of the Day:")').parent();
 
-      const FOTD = todaysFact.parent().next().text();
-      const FOTDBackup = todaysFact.next().text();
+      const FOTD = todaysFact.next().text();
+      const FOTDBackup = todaysFact.parent().next().text();
 
-      console.log("`````````````````````````````````")
-      console.log("Random fact:", FOTD + FOTDBackup);
-      console.log("`````````````````````````````````")
+      const fact = FOTD + FOTDBackup;
+
+      console.log("`````````````````````````````````");
+      console.log("Fact of the day:", fact);
+      console.log("`````````````````````````````````");
       //八月で正しく出来たかどうか確認しないといけないじゃん
 
       Fact.create({
-        factoid: "Here's where you'd put the scraped FOTD"
+        factoid: fact
       }, (err, fact) => {
         if(err){
           console.log("Error:", err);
         }else{
-          console.log("New fact:", fact);
+          console.log("New fact of the day:", fact);
         }
       });
 
