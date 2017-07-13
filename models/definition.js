@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/wizdom");
 
 const definitionSchema = new mongoose.Schema({
-  wotd: String,
+  word: String,
   wordType: String,
   pronunciation: String,
   definitions: [ String ], //or else it's [{ String }]
