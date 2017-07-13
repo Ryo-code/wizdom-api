@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/wizdom");
+const url = process.env.WIZDOMDB || "mongodb://localhost/wizdom";
+mongoose.connect(url);
 
 const definitionSchema = new mongoose.Schema({
   word: String,
   wordType: String,
   pronunciation: String,
-  definitions: [ String ], //or else it's [{ String }]
+  definitions: [ String ],
   example1: String,
   example2: String,
   didYouKnow: String,

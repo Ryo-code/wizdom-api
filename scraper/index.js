@@ -6,10 +6,8 @@ const quotationOTD  = require("./quotation");
 const CronJob       = require('cron').CronJob;
 const moment        = require("moment");
 
-const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
-console.log("Date & time:", rightNow);
-
 const everyMorning = new CronJob('00 15 7 * * 0-6', () => { // This will run at 7:15:00(AM) everyday
+  const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
   console.log("It's probably 7:15 AM... but the precise moment is", rightNow);
   definitionOTD();
   factOTD();

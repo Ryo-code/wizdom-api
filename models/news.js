@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/wizdom");
+const url = process.env.WIZDOMDB || "mongodb://localhost/wizdom";
+mongoose.connect(url);
 
 const newsSchema = new mongoose.Schema({
   newsTitle: String,
