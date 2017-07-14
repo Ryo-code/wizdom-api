@@ -18,10 +18,10 @@ const moment        = require("moment");
 // const everyMorning = new CronJob('0 15 7 * * *', () => { // This will run at 7:15:00(AM) everyday
 new CronJob('15 0 * * * *', () => { //for testing purposes
   const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
-}, null, true, 'America/Chicago');
   console.log("=================================================================");
   console.log("Inputting data –", rightNow);
   console.log("=================================================================");
+}, null, true, 'America/Chicago');
   definitionOTD();
   factOTD();
   newsOTD();
