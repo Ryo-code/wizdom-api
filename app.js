@@ -8,13 +8,11 @@ const News       = require("./models/news");
 const Quotation  = require("./models/quotation");
 
 app.get("/", (req, res) => {
+  res.send("This is the Wizdom API.");
 
+  /* If you need to delete something from the DB, you can do it like this...  */
   // Definition.remove({word: "savant"}).exec();
   // News.remove({source: "popularmechanics.com"}).exec();
-  // Quotation.remove({quoter: "Claude Joseph Rouget de Lisle"}).exec();
-  //Just delete the facts ones
-
-  res.send("This is the Wizdom API. This should delete the useless duplicates in the DB.");
 });
 
 app.get("/definition", (req, res) => {
