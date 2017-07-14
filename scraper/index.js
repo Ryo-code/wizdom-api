@@ -8,14 +8,14 @@ const moment        = require("moment");
 
 
 //Cronjob arguments: Seconds(0-59) Minutes(0-59) Hours(0-23) Day_Of_Month(1-31) Months(0-11) Day_Of_Week(0-6)
-//"10" doesn't mean "run every 10 seconds," it means "run on the 10th second of every minute"
-//Therefore: ('0 * * * * *') = hourly; ('0 0 * * * *') = daily
+//I think "10" doesn't mean "run every 10 seconds," it means "run on the 10th second of every minute"
+//Therefore: ('0 * * * * *') = every minute; ('0 0 * * * *') = hourly
 
 // new CronJob('* * * * * *', () => { //for testing purposes
 //   console.log(rightNow)
 // }, null, true, 'America/Chicago');
 
-// const everyMorning = new CronJob('* * 7 * * *', () => { // This will run at 7:15:00(AM) everyday
+// const everyMorning = new CronJob('0 15 7 * * *', () => { // This will run at 7:15:00(AM) everyday
 new CronJob('15 0 * * * *', () => { //for testing purposes
   const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
   console.log("=================================================================");
