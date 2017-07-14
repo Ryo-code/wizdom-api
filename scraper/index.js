@@ -16,7 +16,7 @@ const moment        = require("moment");
 // }, null, true, 'America/Chicago');
 
 // const everyMorning = new CronJob('* * 7 * * *', () => { // This will run at 7:15:00(AM) everyday
-new CronJob('15 * * * * *', () => { //for testing purposes
+new CronJob('15 0 * * * *', () => { //for testing purposes
   const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
   console.log("=================================================================");
   console.log("Inputting data –", rightNow);
