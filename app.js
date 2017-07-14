@@ -9,9 +9,9 @@ const Quotation  = require("./models/quotation");
 
 app.get("/", (req, res) => {
 
-  Definition.remove({word: "savant"}).exec();
-  News.remove({source: "popularmechanics.com"}).exec();
-  Quotation.remove({quoter: "Claude Joseph Rouget de Lisle"}).exec();
+  // Definition.remove({word: "savant"}).exec();
+  // News.remove({source: "popularmechanics.com"}).exec();
+  // Quotation.remove({quoter: "Claude Joseph Rouget de Lisle"}).exec();
   //Just delete the facts ones
 
   res.send("This is the Wizdom API. This should delete the useless duplicates in the DB.");
