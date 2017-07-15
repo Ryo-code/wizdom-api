@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const scraper = require("./scraper");
 
-const Definition = require("./models/definition");
+const Word = require("./models/word");
 const Fact       = require("./models/fact");
 const News       = require("./models/news");
 const Quotation  = require("./models/quotation");
@@ -11,12 +11,12 @@ app.get("/", (req, res) => {
   res.send("This is the Wizdom API.");
 
   /* If you need to delete something from the DB, you can do it like this...  */
-  // Definition.remove({word: "savant"}).exec();
+  // Word.remove({word: "savant"}).exec();
   // News.remove({source: "popularmechanics.com"}).exec();
 });
 
-app.get("/definition", (req, res) => {
-  Definition.findOne({}, {}, { sort: { 'created_at' : -1 } }, (err, newestWord) => {
+app.get("/word", (req, res) => {
+  Word.findOne({}, {}, { sort: { 'created_at' : -1 } }, (err, newestWord) => {
     console.log("Newest word", newestWord)
     return res.json(newestWord);
   });

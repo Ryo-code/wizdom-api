@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const url = process.env.WIZDOMDB || "mongodb://localhost/wizdom";
 mongoose.connect(url);
 
-const definitionSchema = new mongoose.Schema({
+const wordSchema = new mongoose.Schema({
   created_at: { type: Date, default: Date.now },
   word: String,
   wordType: String,
@@ -13,4 +13,4 @@ const definitionSchema = new mongoose.Schema({
   didYouKnow: String
 });
 
-module.exports = mongoose.model("Definition", definitionSchema);
+module.exports = mongoose.model("Word", wordSchema);

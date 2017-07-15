@@ -1,6 +1,6 @@
 const request = require('request');
 const cheerio = require('cheerio');
-const Definition = require("../models/definition");
+const Word = require("../models/word");
 
 const merriamWebsterWOTD = () => {
   request('https://www.merriam-webster.com/word-of-the-day', (err, resp, html) => {
@@ -37,7 +37,7 @@ const merriamWebsterWOTD = () => {
       // To manipulate content: before(), insertBefore(), replaceWith(), wrap(), prepend(), prependTo(), append(), etc.
       console.log("##########################################")
 
-      Definition.create({
+      Word.create({
         word: todaysWord,
         wordType: wordType,
         pronunciation: pronunciation,
@@ -45,11 +45,11 @@ const merriamWebsterWOTD = () => {
         example1: exampleOne,
         example2: exampleTwo,
         didYouKnow: didYouKnow,
-      }, (err, word) => {
+      }, (err, newWord) => {
         if (err) {
           console.log("Error:", err);
         } else {
-          console.log("New word of the day:", word);
+          console.log("New word of the day:", newWord);
         }
       });
 
