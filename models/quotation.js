@@ -3,11 +3,11 @@ const url = process.env.WIZDOMDB || "mongodb://localhost/wizdom";
 mongoose.connect(url);
 
 const quotationSchema = new mongoose.Schema({
-  created_at: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now },
   imageSrc: String,
   quote: String,
   quoter: String,
-  quoterLink: String,
+  quoterLink: String
 });
 
 module.exports = mongoose.model("Quotation", quotationSchema);
