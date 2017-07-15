@@ -3,7 +3,7 @@ const url = process.env.WIZDOMDB || "mongodb://localhost/wizdom";
 mongoose.connect(url);
 
 const quotationSchema = new mongoose.Schema({
-  image: String,
+  imageSrc: String,
   quote: String,
   quoter: String,
   quoterLink: String,
