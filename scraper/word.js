@@ -29,30 +29,36 @@ const merriamWebsterWOTD = () => {
       createDefinitionArray();
 
       console.log("###################WOTD###################");
-      console.log("today's word is:", todaysWord);
+      console.log("Word of the day:", todaysWord);
       console.log(defsArray.length + " definitions:", defsArray);
       console.log("Example 1 -->", exampleOne);
       console.log("Example 2 -->", exampleTwo);
-      console.log("Food for thought:", typeof (didYouKnow), didYouKnow);
+      console.log("Food for thought:", typeof(didYouKnow), didYouKnow);
       // To manipulate content: before(), insertBefore(), replaceWith(), wrap(), prepend(), prependTo(), append(), etc.
       console.log("##########################################")
 
-      Word.create({
-        word: todaysWord,
-        wordType: wordType,
-        pronunciation: pronunciation,
-        definitions: defsArray,
-        example1: exampleOne,
-        example2: exampleTwo,
-        didYouKnow: didYouKnow,
-      }, (err, newWord) => {
-        if (err) {
-          console.log("Error:", err);
-        } else {
-          console.log("New word of the day:", newWord);
-        }
-      });
-
+      if(todaysWord.length > 0){
+        Word.create({
+          word: todaysWord,
+          wordType: wordType,
+          pronunciation: pronunciation,
+          definitions: defsArray,
+          example1: exampleOne,
+          example2: exampleTwo,
+          didYouKnow: didYouKnow,
+        }, (err, newWord) => {
+          if (err) {
+            console.log("Error:", err);
+          } else {
+            console.log("New word of the day:", newWord);
+          }
+        });
+      }else{
+        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+        console.log("WORD SCRAPER MESSAGE:");
+        console.log("I tried to scrape the word of the day, but there was a problem, so I didn't put it in the DB.");
+        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+      }
     }
   });
 }

@@ -20,19 +20,25 @@ const quoteOfTheDay = () => {
       console.log("QuoterLink:", "https://en.wikiquote.org" + quoteInfo.next().children().children('a').attr('href'));
       console.log("Image source:", "https:" + todaysQuote.parent().parent().children().children('a').children('img').attr('src') );
 
-      Quotation.create({
-        quote: quote,
-        quoter: quoter,
-        quoterLink: quoterLink,
-        imageSrc: imageSrc,
-      }, (err, quote) => {
-        if(err){
-          console.log("Error:", err);
-        }else{
-          console.log("New quote:", quote);
-        }
-      });
-
+      if(quote.length > 0){
+        Quotation.create({
+          quote: quote,
+          quoter: quoter,
+          quoterLink: quoterLink,
+          imageSrc: imageSrc,
+        }, (err, quote) => {
+          if(err){
+            console.log("Error:", err);
+          }else{
+            console.log("New quote:", quote);
+          }
+        });
+      }else{
+        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+        console.log("QUOTATION SCRAPER MESSAGE:");
+        console.log("I tried to scrape the quote, but there was a problem, so I didn't put it in the DB.");
+        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+      }
     }
   })
 }

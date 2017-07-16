@@ -22,20 +22,26 @@ const redditTopNews = () => {
       console.log("Comments link->", commentsLink);
       console.log("- - - - - - - - - - - - - - - - - -");
 
-      News.create({
-        newsTitle: newsTitle,
-        source: abbrevLink,
-        articleLink: fullLink,
-        redditLink: commentsLink,
-        numOfRedditComments: commentsNumbers,
-      }, (err, news) => {
-        if(err){
-          console.log("Error:", err);
-        }else{
-          console.log("Top news of the day:", news);
-        }
-      });
-
+      if(newsTitle.length > 0){
+        News.create({
+          newsTitle: newsTitle,
+          source: abbrevLink,
+          articleLink: fullLink,
+          redditLink: commentsLink,
+          numOfRedditComments: commentsNumbers,
+        }, (err, news) => {
+          if(err){
+            console.log("Error:", err);
+          }else{
+            console.log("Top news of the day:", news);
+          }
+        });
+      }else{
+        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+        console.log("NEWS SCRAPER MESSAGE:");
+        console.log("I tried to scrape the news, but there was a problem, so I didn't put it in the DB.");
+        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+      }
     }
   });
 }
