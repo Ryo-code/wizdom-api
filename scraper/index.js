@@ -8,7 +8,6 @@ const moment       = require("moment");
 
 //Cronjob arguments: Seconds(0-59) Minutes(0-59) Hours(0-23) Day_Of_Month(1-31) Months(0-11) Day_Of_Week(0-6)
 const everyMorning = new CronJob('0 15 7 * * *', () => { // This will run at 7:15:00(AM) everyday
-}, null, true, 'America/Chicago');
   const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
   console.log("=================================================================");
   console.log("Scraping data & entering into DB –", rightNow);
@@ -17,3 +16,4 @@ const everyMorning = new CronJob('0 15 7 * * *', () => { // This will run at 7:1
   newsOTD();
   quotationOTD();
   wordOTD();
+}, null, true, 'America/Chicago');
