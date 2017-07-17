@@ -6,12 +6,12 @@ const wordOTD      = require("./word");
 const CronJob      = require('cron').CronJob;
 const moment       = require("moment");
 
-const logMessage = new CronJob('0 0,10,30,45 * * * *', () => {
+const logMessage = new CronJob('0 0/15 * 1/1 * ? *', () => {
   console.log("DING! It's", moment().format('h:mm a (MMMM Do)') );
 }, null, true, 'America/Los_Angeles');
 
 //Cronjob arguments: Seconds(0-59) Minutes(0-59) Hours(0-23) Day_Of_Month(1-31) Months(0-11) Day_Of_Week(0-6)
-const everyMorning = new CronJob('0 15 0,6,12,14,16,17,18 * * *', () => {
+const everyMorning = new CronJob('0 0 0/2 1/1 * ? *', () => { //runs every 2 hours
   const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
 
   console.log("=================================================================");
