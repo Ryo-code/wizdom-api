@@ -6,7 +6,7 @@ const wordOTD      = require("./word");
 const CronJob      = require('cron').CronJob;
 const moment       = require("moment");
 
-const hourly message new CronJob('0 0 * * * *', () => {
+const hourlyMessage new CronJob('0 0 * * * *', () => {
   const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
   console.log("DING! It's", rightNow);
 }, null, true, 'America/Chicago');
