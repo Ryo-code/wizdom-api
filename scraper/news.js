@@ -22,7 +22,7 @@ const redditTopNews = () => {
       console.log("Comments link->", commentsLink);
       console.log("- - - - - - - - - - - - - - - - - -");
 
-      if(newsTitle.length > 0){
+      // if(newsTitle.length > 0){
         News.create({
           newsTitle: newsTitle,
           source: abbrevLink,
@@ -36,12 +36,12 @@ const redditTopNews = () => {
             console.log("Top news of the day:", news);
           }
         });
-      }else{
-        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
-        console.log("NEWS SCRAPER MESSAGE:");
-        console.log("I tried to scrape the news, but there was a problem, so I didn't put it in the DB.");
-        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
-      }
+      // }else{
+      //   console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+      //   console.log("NEWS SCRAPER MESSAGE:");
+      //   console.log("I tried to scrape the news, but there was a problem, so I didn't put it in the DB.");
+      //   console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+      // }
     }
   });
 }

@@ -18,7 +18,7 @@ const beAGreatTeacherFOTD = () => {
       console.log("`````````````````````````````````");
       //八月で正しく出来たかどうか確認しないといけないじゃん
 
-      if(fact.length > 0){
+      // if(fact.length > 0){
         Fact.create({
           factoid: fact
         }, (err, fact) => {
@@ -28,12 +28,12 @@ const beAGreatTeacherFOTD = () => {
             console.log("New fact of the day:", fact);
           }
         });
-      }else{
-        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
-        console.log("FACT SCRAPER MESSAGE:");
-        console.log("I tried to scrape the fact, but there was a problem, so I didn't put it in the DB.");
-        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
-      }
+      // }else{
+      //   console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+      //   console.log("FACT SCRAPER MESSAGE:");
+      //   console.log("I tried to scrape the fact, but there was a problem, so I didn't put it in the DB.");
+      //   console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+      // }
     }
   });
 }

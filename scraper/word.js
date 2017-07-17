@@ -28,16 +28,16 @@ const merriamWebsterWOTD = () => {
       }
       createDefinitionArray();
 
-      console.log("###################WOTD###################");
-      console.log("Word of the day:", todaysWord);
-      console.log(defsArray.length + " definitions:", defsArray);
-      console.log("Example 1 -->", exampleOne);
-      console.log("Example 2 -->", exampleTwo);
-      console.log("Food for thought:", typeof(didYouKnow), didYouKnow);
-      // To manipulate content: before(), insertBefore(), replaceWith(), wrap(), prepend(), prependTo(), append(), etc.
-      console.log("##########################################")
+      // console.log("###################WOTD###################");
+      // console.log("Word of the day:", todaysWord);
+      // console.log(defsArray.length + " definitions:", defsArray);
+      // console.log("Example 1 -->", exampleOne);
+      // console.log("Example 2 -->", exampleTwo);
+      // console.log("Food for thought:", typeof(didYouKnow), didYouKnow);
+      // // To manipulate content: before(), insertBefore(), replaceWith(), wrap(), prepend(), prependTo(), append(), etc.
+      // console.log("##########################################")
 
-      if(todaysWord.length > 0){
+      // if(todaysWord.length > 0){
         Word.create({
           word: todaysWord,
           wordType: wordType,
@@ -53,12 +53,12 @@ const merriamWebsterWOTD = () => {
             console.log("New word of the day:", newWord);
           }
         });
-      }else{
-        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
-        console.log("WORD SCRAPER MESSAGE:");
-        console.log("I tried to scrape the word of the day, but there was a problem, so I didn't put it in the DB.");
-        console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
-      }
+      // }else{
+      //   console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+      //   console.log("WORD SCRAPER MESSAGE:");
+      //   console.log("I tried to scrape the word of the day, but there was a problem, so I didn't put it in the DB.");
+      //   console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
+      // }
     }
   });
 }
