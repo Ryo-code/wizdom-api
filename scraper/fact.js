@@ -17,10 +17,10 @@ const beAGreatTeacherFOTD = () => {
       console.log("Fact of the day:", fact);
       console.log("`````````````````````````````````");
       //八月で正しく出来たかどうか確認しないといけないじゃん
-
+      
       // if(fact.length > 0){
         Fact.create({
-          factoid: fact
+          factoid: fact || "You lose up to 100 hairs a day."
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
