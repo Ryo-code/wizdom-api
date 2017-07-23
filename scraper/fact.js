@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "You lose up to 100 hairs a day." // || fact
+          factoid: "A warm frog makes faster croaking noises than a cold frog." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
