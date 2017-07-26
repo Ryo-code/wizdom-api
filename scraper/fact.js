@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "A warm frog makes faster croaking noises than a cold frog." // || fact
+          factoid: "In 1895 Hampshire police handed out the first ever speeding ticket, fining a man for doing 6 mph!" // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
