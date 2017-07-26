@@ -23,6 +23,8 @@ app.get("/word", (req, res) => {
 });
 
 app.get("/fact", (req, res) => {
+  //TODO: maybe create middleWare to check if fact.length > 5...
+  //and if not, get a random one from the DB?
   Fact.findOne({}, {}, { sort: { 'created_at' : -1 } }, (err, newestFact) => {
     console.log("Newest fact", newestFact)
     return res.json(newestFact);
