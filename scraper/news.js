@@ -11,14 +11,14 @@ const redditTopNews = () => {
       const newsTitle = todaysTopStory.children().first().text();
       const fullLink = todaysTopStory.children().attr('href');
 
-      const commentsNumbers = todaysTopStory.next().next().text().trim().slice(0, -14).trim();
+      const commentsNumbers = todaysTopStory.next().next().text().trim().slice(0, 5).trim();
       const commentsLink = todaysTopStory.next().next().children().children().attr('href');
 
       console.log("- - - - - - - - - - - - - - - - - -");
       console.log("News Title  -->", newsTitle);
       console.log("News source -->", abbrevLink);
       console.log("Article link ->", fullLink);
-      console.log("#of comments ->", commentsNumbers, "(a", typeof(commentsNumbers), "which is now being parsed into an integer)");
+      console.log("#of comments ->", commentsNumbers, "(a", typeof(commentsNumbers), ")");
       console.log("Comments link->", commentsLink);
       console.log("- - - - - - - - - - - - - - - - - -");
 
