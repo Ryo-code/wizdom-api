@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "In 1895 Hampshire police handed out the first ever speeding ticket, fining a man for doing 6 mph!" // || fact
+          factoid: "A small child could swim through the veins of a blue whale." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
