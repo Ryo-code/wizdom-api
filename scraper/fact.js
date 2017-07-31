@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "A small child could swim through the veins of a blue whale." // || fact
+          factoid: "Earth is the only planet that is not named after a god." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
