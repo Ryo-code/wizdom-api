@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "Earth is the only planet that is not named after a god." // || fact
+          factoid: "Ketchup was used as a medicine back in the 1930’s." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
