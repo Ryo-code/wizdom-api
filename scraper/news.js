@@ -11,7 +11,7 @@ const redditTopNews = () => {
       const newsTitle = todaysTopStory.children().first().text();
       const fullLink = todaysTopStory.children().attr('href');
 
-      const commentsNumbers = todaysTopStory.next().next().text().trim().slice(0, 5).trim();
+      const commentsNumbers = todaysTopStory.next().next().text().trim().slice(0, 4).trim();
       const commentsLink = todaysTopStory.next().next().children().children().attr('href');
 
       console.log("- - - - - - - - - - - - - - - - - -");

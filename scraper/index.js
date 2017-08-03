@@ -12,14 +12,16 @@ const logMessage = new CronJob('0 0,15,30,45 * * * *', () => {
 
 //Cronjob arguments: Seconds(0-59) Minutes(0-59) Hours(0-23) Day_Of_Month(1-31) Months(0-11) Day_Of_Week(0-6)
 const everyMorning = new CronJob('0 16 7 * * *', () => {
-  const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
 
-  console.log("=================================================================");
-  console.log("Scraping NEWS data & entering into DB –", rightNow);
-  console.log("=================================================================");
 
   factOTD();
-  newsOTD();
   quotationOTD();
   wordOTD();
 }, null, true, 'America/Los_Angeles');
+
+
+  const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"May 22nd 2017, 5:38:04 pm"
+  console.log("=================================================================");
+  console.log("Scraping just the NEWS data & entering into DB –", rightNow);
+  console.log("=================================================================");
+  newsOTD();

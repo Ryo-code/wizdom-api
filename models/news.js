@@ -8,7 +8,7 @@ const newsSchema = new mongoose.Schema({
   source: String,
   articleLink: String,
   redditLink: String,
-  numOfRedditComments: Number
+  numOfRedditComments: String
 });
 
 module.exports = mongoose.model("News", newsSchema);
