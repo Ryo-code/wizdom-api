@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "Ketchup was used as a medicine back in the 1930’s." // || fact
+          factoid: "A single cloud can weigh more than 1 million pounds." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
