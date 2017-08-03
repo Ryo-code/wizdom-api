@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "A single cloud can weigh more than 1 million pounds." // || fact
+          factoid: "The oldest major soft drink in America is Dr. Pepper, which originated in Waco, TX in 1885." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
