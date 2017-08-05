@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "The oldest major soft drink in America is Dr. Pepper, which originated in Waco, TX in 1885." // || fact
+          factoid: "During your lifetime, you will produce enough saliva to fill two swimming pools." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
