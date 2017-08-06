@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "During your lifetime, you will produce enough saliva to fill two swimming pools." // || fact
+          factoid: "Research has found that people who own dogs sleep better at night and get sick less often." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
