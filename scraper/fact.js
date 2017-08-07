@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "Research has found that people who own dogs sleep better at night and get sick less often." // || fact
+          factoid: "The Bible was written by over 40 authors over a period of 1500 years." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
