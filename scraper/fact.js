@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "The Bible was written by over 40 authors over a period of 1500 years." // || fact
+          factoid: "By donating just one pint of blood, four lives can be saved." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
