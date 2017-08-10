@@ -1,6 +1,9 @@
-#! /app/bin/node
-function showMessage() {
-  console.log('Kablamo! This is the magic message from bin/node/herokuFile');
+#! /app/.heroku/node/bin/node
+var start = require('./app.js');
+
+function activateTask() {
+  start();
 }
-showMessage();
+activateTask();
+
 process.exit();

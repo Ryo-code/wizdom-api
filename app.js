@@ -49,3 +49,5 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log('The server has started on port', port);
 });
+
+module.exports = start;
