@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "A colony of bees have to fly almost fifty-five thousand miles and tap two million flowers to make one pound of honey." // || fact
+          factoid: "The average life span of a major league baseball is 7 pitches." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
