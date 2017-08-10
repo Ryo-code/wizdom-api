@@ -1,4 +1,5 @@
 #! /app/.heroku/node/bin/node
+
 var start = require('./app.js');
 
 function activateTask() {
