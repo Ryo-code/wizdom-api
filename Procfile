@@ -1,2 +1,2 @@
 web: node app.js
-worker: node herokuCron.js
+worker: node bin/node/herokuCron.js
