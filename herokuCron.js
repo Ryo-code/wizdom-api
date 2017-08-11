@@ -8,7 +8,7 @@ function logMessage() {
   console.log('-=-  -=-  -=-  -=-  -=-  -=-  -=-  -=-  -=-  -=-  ');
   console.log("");
   console.log('GONG!');
-  console.log('This console log comes from the herokuCron.js file in /bin/node');
+  console.log('This console log comes from the herokuCron.js file in the ROOT folder');
   console.log("");
   console.log('-=-  -=-  -=-  -=-  -=-  -=-  -=-  -=-  -=-  -=-  ');
   console.log('-=-   -=-   -=-   -=-   -=-   -=-   -=-   -=-   -=- ');
