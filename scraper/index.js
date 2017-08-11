@@ -18,8 +18,9 @@ const everyMorning = new CronJob('0 16 7 * * *', () => {
   console.log("Scraping data & entering into DB –", rightNow);
   console.log("=================================================================");
 
-  factOTD();
   newsOTD();
   quotationOTD();
   wordOTD();
 }, null, true, 'America/Los_Angeles');
+
+  factOTD();

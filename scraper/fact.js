@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "The average life span of a major league baseball is 7 pitches." // || fact
+          factoid: "Next to man, the porpoise is the most intelligent creature on earth." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
