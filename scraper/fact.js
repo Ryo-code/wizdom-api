@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "Next to man, the porpoise is the most intelligent creature on earth." // || fact
+          factoid: "The name of the popular sports drink Gatorade was named for the University of Florida Gators where it was developed." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
