@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "The name of the popular sports drink Gatorade was named for the University of Florida Gators where it was developed." // || fact
+          factoid: "Leaving the water running while brushing your teeth can waste four gallons of water in a minute." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
