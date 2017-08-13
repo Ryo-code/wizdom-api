@@ -15,6 +15,7 @@ const everyMorning = new CronJob('0 16 7 * * *', () => {
   const rightNow = moment().format('MMMM Do YYYY, h:mm:ss a'); //"August 22nd 2017, 5:38:04 pm"
 
   console.log("=================================================================");
+  console.log("This message is brought to you by... scraper/index.js")
   console.log("Scraping data & entering into DB –", rightNow);
   console.log("=================================================================");
 
