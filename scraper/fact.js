@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "Leaving the water running while brushing your teeth can waste four gallons of water in a minute." // || fact
+          factoid: "The average person walks the equivalent of twice around the world in a lifetime." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
