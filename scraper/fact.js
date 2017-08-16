@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "Lower stress up to 68% by READING.  Researchers say it’s hard to worry about the real world when brain is busy visualizing written one." // || fact
+          factoid: "The average woman uses her height in lipstick every 5 years." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
