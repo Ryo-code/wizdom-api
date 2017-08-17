@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "The average woman uses her height in lipstick every 5 years." // || fact
+          factoid: "Studies show that eating spicy food can help you live longer." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
