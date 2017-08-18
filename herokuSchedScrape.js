@@ -28,5 +28,5 @@ const runScraperFromHerokuScheduler = () => {
   quotationOTD();
   wordOTD();
 }
-
-runScraperFromHerokuScheduler();
+//Experiment... what happens when this function stops? スクレーパーはちゃんと動いてる？
+// runScraperFromHerokuScheduler();
