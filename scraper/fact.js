@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "Blueberries will not ripen until they are picked." // || fact
+          factoid: "There are more lifeforms living on your skin than there are people on the planet." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
