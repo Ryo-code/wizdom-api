@@ -20,7 +20,7 @@ const beAGreatTeacherFOTD = () => {
       
       // if(fact.length > 0){
         Fact.create({
-          factoid: "There are more lifeforms living on your skin than there are people on the planet." // || fact
+          factoid: "10% of the World’s population is left handed." // || fact
         }, (err, fact) => {
           if(err){
             console.log("Error:", err);
