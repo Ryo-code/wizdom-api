@@ -6,6 +6,7 @@ const wordOTD      = require("./word");
 const CronJob      = require('cron').CronJob;
 const moment       = require("moment");
 
+//Helpful timestamps for heroku logs
 const logMessage = new CronJob('0 0,15,30,45 * * * *', () => {
   console.log("DING! It's", moment().format('h:mm a (MMMM Do)') );
 }, null, true, 'America/Los_Angeles');

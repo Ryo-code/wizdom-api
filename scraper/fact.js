@@ -1,6 +1,6 @@
 const request = require('request');
 const cheerio = require('cheerio');
-const Fact    = require("../models/fact");
+const Fact = require("../models/fact");
 
 const beAGreatTeacherFOTD = () => {
   request('https://www.beagreatteacher.com/daily-fun-fact/', (err, resp, html) => {
@@ -17,17 +17,18 @@ const beAGreatTeacherFOTD = () => {
       console.log("Fact of the day:", fact);
       console.log("`````````````````````````````````");
       //八月で正しく出来たかどうか確認しないといけないじゃん
-      
+
       // if(fact.length > 0){
-        Fact.create({
-          factoid: "10% of the World’s population is left handed." // || fact
-        }, (err, fact) => {
-          if(err){
-            console.log("Error:", err);
-          }else{
-            console.log("New fact of the day:", fact);
-          }
-        });
+      Fact.create({
+        factoid: fact
+        //Maybe make a fail-safe with「fuckinghomepage.comin case these guys wanna take another break...
+      }, (err, fact) => {
+        if (err) {
+          console.log("Error:", err);
+        } else {
+          console.log("New fact of the day:", fact);
+        }
+      });
       // }else{
       //   console.log("----- ----- ----- ----- ----- ----- ----- ----- ");
       //   console.log("FACT SCRAPER MESSAGE:");
