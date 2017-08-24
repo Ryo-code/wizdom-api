@@ -3,10 +3,10 @@
 /*    Heroku から他のホスティングサイトに移動させたら、これを消して良い         */
 //To open heroku scheduler → heroku addons:open scheduler
 
-const factOTD      = require("scraper/fact");
-const newsOTD      = require("scraper/news");
-const quotationOTD = require("scraper/quotation");
-const wordOTD      = require("scraper/word");
+const factOTD      = require("./scraper/fact");
+const newsOTD      = require("./scraper/news");
+const quotationOTD = require("./scraper/quotation");
+const wordOTD      = require("./scraper/word");
 const moment       = require("moment");
 
 const runScraperFromHerokuScheduler = () => {
@@ -29,4 +29,4 @@ const runScraperFromHerokuScheduler = () => {
   wordOTD();
 }
 
-// runScraperFromHerokuScheduler();
+runScraperFromHerokuScheduler();
